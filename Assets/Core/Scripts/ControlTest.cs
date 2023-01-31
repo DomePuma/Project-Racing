@@ -1,5 +1,10 @@
+using Cinemachine;
+using DG.Tweening;
+using Unity.VisualScripting;
+using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class ControlsTest : MonoBehaviour
 {
@@ -16,6 +21,7 @@ public class ControlsTest : MonoBehaviour
 
     public float _maxRotationSpeed = 1;
 
+    [SerializeField] private VolumeScript volume;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +35,7 @@ public class ControlsTest : MonoBehaviour
 
 
     }
-
+   
     private void OnMoveCanceled(InputAction.CallbackContext obj)
     {
         _moveDirection = Vector2.zero;
